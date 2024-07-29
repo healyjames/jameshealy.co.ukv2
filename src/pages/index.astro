@@ -1,12 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
-import Navigation from '../components/Navigation.astro'
+import DesktopNavigation from '../components/navigation/DesktopNavigation.astro'
+import MobileNavigation from '../components/navigation/MobileNavigation.astro'
 import Header from '../components/Header.astro'
 ---
 
 <Layout title="Hey, I'm James!">
-	<Navigation />
+
+	<div class="block lg:hidden">
+		<MobileNavigation />
+	</div>
+	<div class="hidden lg:block">
+		<DesktopNavigation />
+	</div>
+	
+
 	<Header
 		title="Software Engineer"
 		subtitle="Hey, I'm James. Full stack developer currently working on e-commerce solutions in the retail industry."
