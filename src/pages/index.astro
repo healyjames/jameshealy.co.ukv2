@@ -4,6 +4,7 @@ import Card from '../components/Card.astro'
 import DesktopNavigation from '../components/navigation/DesktopNavigation.astro'
 import MobileNavigation from '../components/navigation/MobileNavigation.astro'
 import Header from '../components/Header.astro'
+import Content from '../components/Content.astro'
 ---
 
 <Layout title="Hey, I'm James!">
@@ -24,6 +25,13 @@ import Header from '../components/Header.astro'
 			title="Software Engineer"
 			subtitle="Hey, I'm James. Full stack developer currently working on e-commerce solutions in the retail industry."
 		/>
+
+		<!-- About Me -->
+		<Content id="about-me">
+			<p>The past three years have seen me grow massively as a software engineer. I challenged myself to transition from a front-end developer to a full stack engineer, gaining great knowledge and experience in technologies from React and NextJS all the way down to GitHub CI/CD and Kubernetes.</p>
+			<p>My aim is, and has always been, to become a the best engineer and team member that I possibly can who constantly demonstrates core values throughout their work. Those values being: ambition, innovation, collaboration and leadership. I pride myself on my approachable and friendly personality, and constantly look to push myself both in my work and personal life.</p>
+		</Content>
+
 
 	</main>
 </Layout>

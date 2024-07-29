@@ -1,4 +1,12 @@
-<div class="m-5 p-5 lg:m-0 lg:p-0">
+---
+interface Props {
+    id?: string
+}
+
+const { id } = Astro.props
+---
+
+<div id={id} class="m-5 p-5 lg:my-5 lg:py-5">
     <div class="prose-lg xl:prose-2xl">
         <slot />
     </div>
