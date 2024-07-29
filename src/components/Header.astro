@@ -1,0 +1,17 @@
+---
+import Content from "./Content.astro"
+
+interface Props {
+	title: string
+	subtitle: string
+}
+
+const { title, subtitle } = Astro.props
+---
+
+<header>
+    <Content>
+        <h1>{title}</h1>
+        <h3>{subtitle}</h3>
+    </Content>
+</header>
