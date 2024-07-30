@@ -70,6 +70,29 @@ import TimelineItem from '../components/timeline/TimelineItem.astro'
 			</TimelineItem>
 		</Timeline>
 
+		<!-- Personal Projects -->
+		<Content id="personal-projects">
+			<h3>Personal Projects</h3>
+			<Card
+				title="Quickcarsearch.io"
+				buttonText="View project on GitHub"
+				href="https://github.com/healyjames/quickcarsearch-next"
+				imageUrl="/images/quickcarsearch.jpg"
+				imageAltText="Laptop screen showing quickcarsearch.io homepage"
+			>
+				<p>NextJS and Styled Components web application for finding the cheapest car based on your budget. I created with the aim of being extremely performant, user friendly, SEO friendly and accessible - the site achieved <a href="/images/quickcarsearch-lighthouse.jpg">a score of 100 for every lighthouse metric</a>.  Dockerised and deployed using AWS Amplify.</p>
+			</Card>
+			
+			<Card
+				title="THG Status"
+				imageUrl="/images/thg-status.jpg"
+				imageAltText="Laptop screen showing internal tooling dashboard tracking health of applications"
+				reverse={true}
+			>
+				<p>Internal healthcheck tool using a NextJS 13 &amp; Tailwind UI, ExpressJS API and MSSQL database. A CRON GitHub pipeline ran every 3 minutes to fetch http status codes which the API would serve as JSON. The UIs job was purely to display the data and allow users to keep track of endpoints that were important to them. The API did a lot of the heavy lifting e.g. interacting with the database and generating the json data for the UI to consume.</p>
+			</Card>
+		</Content>
+
 
 	</main>
 </Layout>
