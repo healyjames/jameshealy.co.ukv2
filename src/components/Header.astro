@@ -1,5 +1,5 @@
 ---
-import Content from "./Content.astro"
+
 
 interface Props {
 	title: string
@@ -10,10 +10,11 @@ const { title, subtitle } = Astro.props
 ---
 
 <header>
-    <Content>
-        <div class="h-[75vh] flex flex-col lg:flex-row lg:gap-16 items-center justify-center flex-nowrap">
+
+        <div class="h-[75vh] mx-10 flex flex-col lg:flex-row lg:gap-16 items-center justify-center flex-nowrap">
             <h1 class="font-bold text-7xl xl:text-8xl m-0">{title}</h1>
             <h3 class="font-normal xl:text-2xl">{subtitle}</h3>
         </div>
-    </Content>
+
+        
 </header>
