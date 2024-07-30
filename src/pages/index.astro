@@ -7,6 +7,7 @@ import Header from '../components/Header.astro'
 import Content from '../components/Content.astro'
 import Timeline from '../components/timeline/Timeline.astro'
 import TimelineItem from '../components/timeline/TimelineItem.astro'
+import { ACTION_ERROR_CODES } from 'astro:actions'
 ---
 
 <Layout title="Hey, I'm James!">
@@ -50,12 +51,12 @@ import TimelineItem from '../components/timeline/TimelineItem.astro'
 			</TimelineItem>
 
 			<TimelineItem
-				role="Design &amp; Marketing Apprentice"
+				role="Digital &amp; Technology Solutions Apprentice"
 				time="2015 - 2021"
 				company="The Travel Visa Company"
 				location="Crewe, UK"
 			>
-				<p>Day-to-day, my role would include designing and maintaining multiple Wordpress websites, producing branded point of sale material and managing an internal CRM system.</p>
+				<p>My role here evolved a lot over the years I was working at TVC. I joined working in social media and marketng, then moved to be a graphic designer and later on to be a web developer predomintly working on wordpress sites.</p>
 				<p>A notable project from my time here was building a PDF visa application pack generator with a dashboard style user interface which allowed staff to enter details about visa requirements that would then be generated into a PDF upon request to the webapp.</p>
 				<p>Most of my time here was spent as a graphic designer which I was then able to translate into simple UI components - I redesigned a visa requirement widget interface by looking at popular UI trends within the travel industry and combining them with prominent web design principles (Gestalt) while keeping within the companies brand guidelines. This boosted user engagement and improved our websites overall usability.</p>
 			</TimelineItem>
@@ -100,6 +101,15 @@ import TimelineItem from '../components/timeline/TimelineItem.astro'
 				href="https://chromewebstore.google.com/detail/outliner/nkihollbkhfekaoobfmoigabmbjppfko?hl=en&authuser=0"
 			>
 				<p>Chrome extension that visually highlights the various different widgets on a THG site and displays important information each widget such as the type and ID number.</p>
+			</Card>
+
+			<Card
+				title="Jameshealy.co.uk"
+				imageUrl="/images/james-healy-logo-gradient.jpg"
+				imageAltText="jameshealy.co.uk logo"
+				reverse={true}
+			>
+				<p>I built jameshealy.co.uk as a project to modernize my old portfolio and experiment with the latest technologies. The site has been built using Astro JS and styled with Tailwind / Daisy UI. I'm excited to see how these tools can be used to create even more impressive projects in the future.</p>
 			</Card>
 		</Content>
 
