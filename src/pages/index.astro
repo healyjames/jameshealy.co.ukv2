@@ -7,7 +7,13 @@ import Header from '../components/Header.astro'
 import Content from '../components/Content.astro'
 import Timeline from '../components/timeline/Timeline.astro'
 import TimelineItem from '../components/timeline/TimelineItem.astro'
+
 import { Skills } from '../components/Skills'
+
+import OutlinerImage from '../components/images/outliner.jpg'
+import QuickcarsearchImage from '../components/images/quickcarsearch.jpg'
+import ThgStatusImage from '../components/images/thg-status.jpg'
+import JameshealyImage from '../components/images/james-healy-logo-gradient.jpg'
 ---
 
 <Layout title="Hey, I'm James!">
@@ -92,7 +98,7 @@ import { Skills } from '../components/Skills'
 				title="Quickcarsearch.io"
 				buttonText="View project on GitHub"
 				href="https://github.com/healyjames/quickcarsearch-next"
-				imageUrl="/images/quickcarsearch.jpg"
+				image={QuickcarsearchImage}
 				imageAltText="Laptop screen showing quickcarsearch.io homepage"
 			>
 				<p>NextJS and Styled Components web application for finding the cheapest car based on your budget. I created with the aim of being extremely performant, user friendly, SEO friendly and accessible - the site achieved <a href="/images/quickcarsearch-lighthouse.jpg">a score of 100 for every lighthouse metric</a>.  Dockerised and deployed using AWS Amplify.</p>
@@ -100,7 +106,7 @@ import { Skills } from '../components/Skills'
 			
 			<Card
 				title="THG Status"
-				imageUrl="/images/thg-status.jpg"
+				image={ThgStatusImage}
 				imageAltText="Laptop screen showing internal tooling dashboard tracking health of applications"
 				reverse={true}
 			>
@@ -109,7 +115,7 @@ import { Skills } from '../components/Skills'
 
 			<Card
 				title="Outliner"
-				imageUrl="/images/outliner.jpg"
+				image={OutlinerImage}
 				imageAltText="Google chrome extensions page with dea+tails of Outliner extension on screen"
 				buttonText="View on Chrome Web Store"
 				href="https://chromewebstore.google.com/detail/outliner/nkihollbkhfekaoobfmoigabmbjppfko?hl=en&authuser=0"
@@ -119,7 +125,7 @@ import { Skills } from '../components/Skills'
 
 			<Card
 				title="Jameshealy.co.uk"
-				imageUrl="/images/james-healy-logo-gradient.jpg"
+				image={JameshealyImage}
 				imageAltText="jameshealy.co.uk logo"
 				reverse={true}
 			>

@@ -1,21 +1,23 @@
 ---
+import { Image as AstroImage } from 'astro:assets'
+
 interface Props {
 	title: string
 	buttonText?: string
 	href?: string
-	imageUrl: string
+	image: ImageMetadata
 	imageAltText: string
 	reverse?: boolean
 }
 
-const { href, title, buttonText, imageUrl, imageAltText, reverse } = Astro.props;
+const { href, title, buttonText, image, imageAltText, reverse } = Astro.props;
 ---
 
 <div class={`${reverse ? 'lg:!flex-row-reverse' : ''} rounded-2xl grid lg:grid-cols-2 glass my-16`}>
 	<figure class={`${reverse ? 'lg:order-last lg:!rounded-r-[inherit] lg:!rounded-l-[0]' : 'lg:!rounded-r-[0] lg:!rounded-l-[inherit]'} m-0`}>
-		<img
+		<AstroImage
 			class="rounded-[inherit]"
-			src={imageUrl}
+			src={image}
 			alt={imageAltText} />
 	</figure>
 	<div class="card-body">
