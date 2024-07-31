@@ -18,6 +18,7 @@ export const Skills = () => {
         "SQL",
         "Jira/Agile",
         "HTML/CSS",
+        "TypeScript"
     ]
 
     useEffect(() => {
