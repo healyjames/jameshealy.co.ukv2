@@ -8,6 +8,18 @@ export default {
 			fontFamily: {
 				sans: ['Outfit', ...defaultTheme.fontFamily.sans],
 			},
+			gridTemplateColumns: {
+				'custom': 'repeat(4, minmax(0, 1fr))'
+			},
+			gridTemplateRows: {
+				'custom': 'repeat(2, minmax(0, 1fr))'
+			},
+			gridColumn: {
+				'span-2': 'span 2 / span 2',
+			},
+			gridRow: {
+				'span-2': 'span 2 / span 2',
+			}
 		},
 	},
 	plugins: [require("@tailwindcss/typography"), require("daisyui")],
