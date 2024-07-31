@@ -7,7 +7,7 @@ interface ContainerProps {
 export const ContentSquareContainer = (props: ContainerProps) => {
     return (
         <React.Fragment>
-            <div className="grid lg:grid-cols-custom items-baseline gap-5">
+            <div className="grid lg:grid-cols-custom items-baseline gap-5 lg:-mt-16">
                 {props.children}
             </div>
         </React.Fragment>
