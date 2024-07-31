@@ -7,7 +7,7 @@ import Header from '../components/Header.astro'
 import Content from '../components/Content.astro'
 import Timeline from '../components/timeline/Timeline.astro'
 import TimelineItem from '../components/timeline/TimelineItem.astro'
-import { ACTION_ERROR_CODES } from 'astro:actions'
+import { Skills } from '../components/Skills'
 ---
 
 <Layout title="Hey, I'm James!">
@@ -25,7 +25,7 @@ import { ACTION_ERROR_CODES } from 'astro:actions'
 
 		<!-- Header / Intro Text -->
 		<Header
-			title="Software Engineer"
+			title="Full Stack Engineer"
 			subtitle="Hey, I'm James. Full stack developer currently working on e-commerce solutions in the retail industry. Read on to find out more about me!"
 		/>
 
@@ -36,6 +36,13 @@ import { ACTION_ERROR_CODES } from 'astro:actions'
 			<h3>About Me</h3>
 			<p>The past three years have seen me grow massively as a software engineer. I challenged myself to transition from a front-end developer to a full stack engineer, gaining great knowledge and experience in technologies from React and NextJS all the way down to GitHub CI/CD and Kubernetes.</p>
 			<p>My aim is, and has always been, to become a the best engineer and team member that I possibly can who constantly demonstrates core values throughout their work. Those values being: ambition, innovation, collaboration and leadership. I pride myself on my approachable and friendly personality, and constantly look to push myself both in my work and personal life.</p>
+		</Content>
+
+		<div class="divider"></div>
+
+		<!-- Skills list -->
+		<Content>
+			<Skills client:load />
 		</Content>
 
 		<div class="divider"></div>
@@ -120,6 +127,7 @@ import { ACTION_ERROR_CODES } from 'astro:actions'
 			</Card>
 		</Content>
 
+		<div class="divider"></div>
 
 	</main>
 </Layout>
