@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import awsAmplify from 'astro-aws-amplify';
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 
@@ -12,5 +11,7 @@ export default defineConfig({
     enabled: false
   },
   output: "server",
-  adapter: awsAmplify()
+  adapter: node({
+    mode: "standalone"
+  })
 });
