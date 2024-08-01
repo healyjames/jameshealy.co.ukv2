@@ -63,41 +63,50 @@ import { LightBulbIcon } from '@heroicons/react/24/outline'
 
 		<div class="divider"></div>
 
-		<!-- Work History -->
-		<Timeline>
-			<TimelineItem
-				role="Software Engineer"
-				time="2021 - present"
-				company="THG"
-				location="Manchester, UK"
-			>
-				<p>My time at THG has seen me move through three different teams thanks to an eagerness to learn and desire to broaden my skills set. I moved from more front-end oriented work to more devOps and back-end teams.</p>
-				<p>My first role was to support and develop the on-boarding of clients (such as White Stuff, Heinz, Lyle & Scott and David Gandy) to our e-commerce platform. Building a new site would involve working with Sass, Java, JSPs and Javascript. Work ranged from fairly simple tasks like styling the site to match UX wire-frames to building/customising widgets, SEO improvements and more.</p>
-				<p>From here, I moved on to the site implementation team where I began to work on complex third party software integration such as Power Reviews and Obsess VR until I moved to a squad whose focus was purely on Homebase. A massive project I was part of was migrating the Homebase site to a new e-commerce platform which is where I began to start working heavily with React, NextJS, Apollo and GraphQL.</p>
-				<p>I currently work in the site automation team. I was brought in to help on another big project which was migrating the teams applications away from dedicated virtual machines and an older kubernetes platform on to the new in-house kubernetes solution. Here, I was able to configure new Kubernetes GitHub ARC runners for the team, create GitHub CI/CD workflow deployment and rollback pipelines as well as complete general work on back end Java and Python applications owned by this team.</p>
-			</TimelineItem>
-
-			<TimelineItem
-				role="Digital &amp; Technology Solutions Apprentice"
-				time="2015 - 2021"
-				company="The Travel Visa Company"
-				location="Crewe, UK"
-			>
-				<p>My role here evolved a lot over the years I was working at TVC. I joined working in social media and marketng, then moved to be a graphic designer and later on to be a web developer predomintly working on wordpress sites.</p>
-				<p>A notable project from my time here was building a PDF visa application pack generator with a dashboard style user interface which allowed staff to enter details about visa requirements that would then be generated into a PDF upon request to the webapp.</p>
-				<p>Most of my time here was spent as a graphic designer which I was then able to translate into simple UI components - I redesigned a visa requirement widget interface by looking at popular UI trends within the travel industry and combining them with prominent web design principles (Gestalt) while keeping within the companies brand guidelines. This boosted user engagement and improved our websites overall usability.</p>
-				<p>During my time here, I was proud to have completed my Digital &amp; technology solutions degree and graduate with first class honours.</p>
-			</TimelineItem>
-
-			<TimelineItem
-				role="Kitchen Assistant"
-				time="2014 - 2015"
-				company="Gees Kitchen"
-				location="Sandbach, UK"
-			>
-				<p>Pot washing, general prep work and kitchen hygiene.</p>
-			</TimelineItem>
-		</Timeline>
+		<!-- Achievements  -->
+		<Content id="achievements">
+			<h2>Achievements</h2>
+			<ContentSquareContainer client:load>
+				<ContentSquareItem
+					icon={GlobeAltIcon}
+					title="Homebase"
+					content="I played a crucial role in the development and migration of <a class='text-[#F4D03F]' href='https://www.homebase.co.uk'>homebase.co.uk</a> to THG's latest e-commerce solution where I was able to refine my skills with NextJS and GraphQL."
+					extended={{vertical: true}}
+					className="lg:col-span-1 lg:row-span-2 bg-gradient-to-tl from-[#F4D03F] to-[#16A085] text-white lg:self-center"
+				/>
+				<ContentSquareItem
+					icon={TrophyIcon}
+					title="Awards"
+					content="Winner of Apprentice Of The Year for South Cheshire and runner up for Future Leader"
+					className="bg-primary text-primary-content lg:self-end"
+				/>
+				<ContentSquareItem
+					icon={ArrowPathRoundedSquareIcon}
+					title="CI/CD &amp; K8s"
+					content="Setting up GitHub ARC runners, K8s deployment/rollback pipelines, and migrating legacy apps to Kubernetes"
+					className="bg-secondary text-secondary-content lg:self-end"
+				/>
+				<ContentSquareItem
+					icon={CircleStackIcon}
+					title="Full Stack"
+					content="Spent time proffessionaly working on front-end, back-end and devops technologies."
+					className="bg-accent text-accent-content lg:self-end"
+				/>
+				<ContentSquareItem
+					icon={LightBulbIcon}
+					title="Outliner"
+					content="Chrome extension to provide visual information for widgets on a given THG site."
+					className="border-8 border-base-content text-base-content lg:self-start"
+				/>
+				<ContentSquareItem
+					icon={ArrowTrendingUpIcon}
+					title="THG Status"
+					content="Personal development project: Internal healtcheck tool built to track http status for a given service and display in user friendly UI."
+					extended={{horizontal: true}}
+					className="lg:col-span-2 bg-gradient-to-l from-[#FF3CAC] via-[#784BA0] to-[#2B86C5] text-white lg:self-start"
+				/>
+			</ContentSquareContainer>
+		</Content>
 
 		<div class="divider"></div>
 
@@ -147,50 +156,41 @@ import { LightBulbIcon } from '@heroicons/react/24/outline'
 
 		<div class="divider"></div>
 
-		<!-- Achievements  -->
-		<Content id="achievements">
-			<h2>Achievements</h2>
-			<ContentSquareContainer client:load>
-				<ContentSquareItem
-					icon={GlobeAltIcon}
-					title="Homebase"
-					content="I played a crucial role in the development and migration of <a class='text-[#F4D03F]' href='https://www.homebase.co.uk'>homebase.co.uk</a> to THG's latest e-commerce solution where I was able to refine my skills with NextJS and GraphQL."
-					extended={{vertical: true}}
-					className="lg:col-span-1 lg:row-span-2 bg-gradient-to-tl from-[#F4D03F] to-[#16A085] text-white lg:self-center"
-				/>
-				<ContentSquareItem
-					icon={TrophyIcon}
-					title="Awards"
-					content="Winner of Apprentice Of The Year for South Cheshire and runner up for Future Leader"
-					className="bg-primary text-primary-content lg:self-end"
-				/>
-				<ContentSquareItem
-					icon={ArrowPathRoundedSquareIcon}
-					title="CI/CD &amp; K8s"
-					content="Setting up GitHub ARC runners, K8s deployment/rollback pipelines, and migrating legacy apps to Kubernetes"
-					className="bg-secondary text-secondary-content lg:self-end"
-				/>
-				<ContentSquareItem
-					icon={CircleStackIcon}
-					title="Full Stack"
-					content="Spent time proffessionaly working on front-end, back-end and devops technologies."
-					className="bg-accent text-accent-content lg:self-end"
-				/>
-				<ContentSquareItem
-					icon={LightBulbIcon}
-					title="Outliner"
-					content="Chrome extension to provide visual information for widgets on a given THG site."
-					className="border-8 border-base-content text-base-content lg:self-start"
-				/>
-				<ContentSquareItem
-					icon={ArrowTrendingUpIcon}
-					title="THG Status"
-					content="Personal development project: Internal healtcheck tool built to track http status for a given service and display in user friendly UI."
-					extended={{horizontal: true}}
-					className="lg:col-span-2 bg-gradient-to-l from-[#FF3CAC] via-[#784BA0] to-[#2B86C5] text-white lg:self-start"
-				/>
-			</ContentSquareContainer>
-		</Content>
+		<!-- Work History -->
+		<Timeline>
+			<TimelineItem
+				role="Software Engineer"
+				time="2021 - present"
+				company="THG"
+				location="Manchester, UK"
+			>
+				<p>My time at THG has seen me move through three different teams thanks to an eagerness to learn and desire to broaden my skills set. I moved from more front-end oriented work to more devOps and back-end teams.</p>
+				<p>My first role was to support and develop the on-boarding of clients (such as White Stuff, Heinz, Lyle & Scott and David Gandy) to our e-commerce platform. Building a new site would involve working with Sass, Java, JSPs and Javascript. Work ranged from fairly simple tasks like styling the site to match UX wire-frames to building/customising widgets, SEO improvements and more.</p>
+				<p>From here, I moved on to the site implementation team where I began to work on complex third party software integration such as Power Reviews and Obsess VR until I moved to a squad whose focus was purely on Homebase. A massive project I was part of was migrating the Homebase site to a new e-commerce platform which is where I began to start working heavily with React, NextJS, Apollo and GraphQL.</p>
+				<p>I currently work in the site automation team. I was brought in to help on another big project which was migrating the teams applications away from dedicated virtual machines and an older kubernetes platform on to the new in-house kubernetes solution. Here, I was able to configure new Kubernetes GitHub ARC runners for the team, create GitHub CI/CD workflow deployment and rollback pipelines as well as complete general work on back end Java and Python applications owned by this team.</p>
+			</TimelineItem>
+
+			<TimelineItem
+				role="Digital &amp; Technology Solutions Apprentice"
+				time="2015 - 2021"
+				company="The Travel Visa Company"
+				location="Crewe, UK"
+			>
+				<p>My role here evolved a lot over the years I was working at TVC. I joined working in social media and marketng, then moved to be a graphic designer and later on to be a web developer predomintly working on wordpress sites.</p>
+				<p>A notable project from my time here was building a PDF visa application pack generator with a dashboard style user interface which allowed staff to enter details about visa requirements that would then be generated into a PDF upon request to the webapp.</p>
+				<p>Most of my time here was spent as a graphic designer which I was then able to translate into simple UI components - I redesigned a visa requirement widget interface by looking at popular UI trends within the travel industry and combining them with prominent web design principles (Gestalt) while keeping within the companies brand guidelines. This boosted user engagement and improved our websites overall usability.</p>
+				<p>During my time here, I was proud to have completed my Digital &amp; technology solutions degree and graduate with first class honours.</p>
+			</TimelineItem>
+
+			<TimelineItem
+				role="Kitchen Assistant"
+				time="2014 - 2015"
+				company="Gees Kitchen"
+				location="Sandbach, UK"
+			>
+				<p>Pot washing, general prep work and kitchen hygiene.</p>
+			</TimelineItem>
+		</Timeline>
 
 		<div class="divider"></div>
 
