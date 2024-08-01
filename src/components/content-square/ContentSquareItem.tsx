@@ -18,7 +18,7 @@ export const ContentSquareItem = (props: ItemProps) => {
         <React.Fragment>
             <div className={`rounded-2xl p-5 hover:drop-shadow-2xl cursor-pointer ${props.className && props.className}`}>
                 <div>
-                    <div className="flex flex-row flex-nowrap items-center">
+                    <div className="flex flex-row flex-nowrap items-center mb-4">
                         <div className="rounded-full border-2 border-current w-8 h-8 mr-2 flex justify-center items-center">
                             <Icon className="w-5" />
                         </div>
