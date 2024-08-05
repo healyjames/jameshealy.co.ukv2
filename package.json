@@ -28,5 +28,8 @@
   },
   "devDependencies": {
     "daisyui": "^4.12.10"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.20.0"
   }
 }
