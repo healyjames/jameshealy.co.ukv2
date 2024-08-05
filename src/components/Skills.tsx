@@ -13,14 +13,19 @@ export const Skills = () => {
         "Python",
         "Kubernetes",
         "Docker",
+        "Node",
+        "Git",
         "GitHub CI/CD",
         "GraphQL",
         "REST API",
         "Sass",
+        "Tailwind",
         "SQL",
         "Jira/Agile",
         "HTML/CSS",
-        "TypeScript"
+        "TypeScript",
+        "Photoshop",
+        "Illustrator"
     ]
 
     const skillsListClasses = "btn btn-outline font-normal m-0.5"
@@ -61,21 +66,11 @@ export const Skills = () => {
                 <div className="modal-box z-[1000]">
                 <h3 className="font-bold text-lg">Full list of skills:</h3>
                 <ul className="list-none flex flex-wrap gap-2">
-                    <li className={skillsListClasses}>React</li>
-                    <li className={skillsListClasses}>NextJS</li>
-                    <li className={skillsListClasses}>Astro</li>
-                    <li className={skillsListClasses}>Java</li>
-                    <li className={skillsListClasses}>Python</li>
-                    <li className={skillsListClasses}>Kubernetes</li>
-                    <li className={skillsListClasses}>Docker</li>
-                    <li className={skillsListClasses}>GitHub CI/CD</li>
-                    <li className={skillsListClasses}>GraphQL</li>
-                    <li className={skillsListClasses}>REST API</li>
-                    <li className={skillsListClasses}>Sass</li>
-                    <li className={skillsListClasses}>SQL</li>
-                    <li className={skillsListClasses}>Jira/Agile</li>
-                    <li className={skillsListClasses}>HTML/CSS</li>
-                    <li className={skillsListClasses}>TypeScript</li>
+                    {
+                        skills.map((skill, index) => {
+                            return (<li key={index} className={skillsListClasses}>{skill}</li>)
+                        })
+                    }
                 </ul>
                 <div className="modal-action">
                     <form method="dialog">
