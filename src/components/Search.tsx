@@ -33,6 +33,9 @@ export const SearchBar = () => {
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
+        } else {
+            setInputVal('');
+            setLocations([]);
         }
     }
 
