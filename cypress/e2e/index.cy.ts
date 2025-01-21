@@ -19,4 +19,15 @@ describe('Persimmon search tests', () => {
 
         cy.get('@apiRequest.all').should('have.length', 0);
     });
+
+    it('results returned for searches', () => {
+        cy.intercept('GET', 'https://www.persimmonhomes.com/umbraco/Api/*').as('apiRequest');
+
+        const page = cy.visit('http://localhost:4321/persimmon-demo');
+        page.get('[data-testid="search-bar-input"]').type('Cheshire');
+
+        cy.wait(500); // Wait for any possible requests to fire
+
+        cy.wait('@apiRequest').its('response.statusCode').should('eq', 200);
+    });
 });
