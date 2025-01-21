@@ -13,7 +13,7 @@ export const SearchDropdown = ({ locations }: SearchDropdownProps) => {
     return (
         <div>
             {locations.map((location, index) => (
-                <div key={index} onClick={() => handleOnClick(location)}>
+                <div role="button" tab-index="0" key={index} onClick={() => handleOnClick(location)}>
                     {location.Name}
                 </div>
             ))}
