@@ -35,10 +35,6 @@ export const SearchBar = () => {
         }
     }
 
-    useEffect(() => {
-        console.log(inputVal);
-    }, [inputVal])
-
     return (
         <input type="text" onChange={handleInputChange}/>
     )
