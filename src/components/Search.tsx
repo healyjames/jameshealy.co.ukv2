@@ -28,6 +28,10 @@ export const SearchBar = () => {
 
                 const data = await response.json();
 
+                if(!data || data.length < 1) {
+                    console.log("no results")
+                }
+
                 setLocations(data);
 
             } catch (error) {
@@ -43,7 +47,7 @@ export const SearchBar = () => {
         <div className="w-6/12 flex flex-col flex-nowrap justify-center">
             <input type="text" onChange={handleInputChange} placeholder="Enter postcode, location or developments..." className="input input-bordered w-full"/>
             
-            {locations.length > 0 && (
+            {locations && locations.length > 0 && (
                 <SearchDropdown locations={locations} />
             )}
         </div>
