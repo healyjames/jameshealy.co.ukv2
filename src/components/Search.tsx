@@ -1,8 +1,17 @@
 import { useEffect, useState, type ReactHTMLElement } from "react"
 
+interface Location {
+    Latitude: number
+    Longitude: number
+    Name: string
+    PlaceId: string
+    PlaceType: string // Probably needs its own type. For now, this is fine
+}
+
 export const SearchBar = () => {
 
-    const [inputVal, setInputVal] = useState<string>('')
+    const [inputVal, setInputVal] = useState<string>('');
+    const [locations, setLocations] = useState<Location[]>([]);
 
     const handleInputChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
@@ -16,9 +25,9 @@ export const SearchBar = () => {
                     throw new Error('Network response was not ok');
                 }
 
-                const data = await response.json()
+                const data = await response.json();
 
-                console.log(data)
+                setLocations(data);
 
             } catch (error) {
                 console.error('Error fetching data:', error);
