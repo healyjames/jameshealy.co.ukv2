@@ -20,7 +20,7 @@ describe('Persimmon search tests', () => {
         cy.get('@apiRequest.all').should('have.length', 0);
     });
 
-    it('results returned for searches', () => {
+    it('api endpoint is healthy', () => {
         cy.intercept('GET', 'https://www.persimmonhomes.com/umbraco/Api/*').as('apiRequest');
 
         const page = cy.visit('http://localhost:4321/persimmon-demo');
