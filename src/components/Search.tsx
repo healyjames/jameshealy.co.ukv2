@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactHTMLElement } from "react"
 
-interface Location {
+export interface Location {
     Latitude: number
     Longitude: number
     Name: string
