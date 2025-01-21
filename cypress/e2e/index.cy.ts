@@ -30,4 +30,9 @@ describe('Persimmon search tests', () => {
 
         cy.wait('@apiRequest').its('response.statusCode').should('eq', 200);
     });
+
+    // TODO: Write test to:
+    // 1. make sure data is return
+    // 2. make sure we handle no data being returned
+    // 3. make sure we handle non 200 codes e.g. errors return from the api
 });
