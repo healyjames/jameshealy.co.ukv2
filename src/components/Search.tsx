@@ -40,8 +40,8 @@ export const SearchBar = () => {
     }
 
     return (
-        <div>
-            <input type="text" onChange={handleInputChange} className="input input-bordered w-full max-w-xs"/>
+        <div className="w-6/12 flex flex-col flex-nowrap justify-center">
+            <input type="text" onChange={handleInputChange} placeholder="Enter postcode, location or developments..." className="input input-bordered w-full max-w-md"/>
             
             {locations && (
                 <SearchDropdown locations={locations} />
