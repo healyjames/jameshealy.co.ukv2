@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactHTMLElement } from "react"
+import { SearchDropdown } from "./SearchDropdown"
 
 export interface Location {
     Latitude: number
@@ -36,6 +37,12 @@ export const SearchBar = () => {
     }
 
     return (
-        <input type="text" onChange={handleInputChange}/>
+        <div>
+            <input type="text" onChange={handleInputChange}/>
+            
+            {locations && (
+                <SearchDropdown locations={locations} />
+            )}
+        </div>
     )
 }
