@@ -45,6 +45,7 @@ export const SearchBar = () => {
 
     return (
         <div className="w-6/12 flex flex-col flex-nowrap justify-center">
+            <h1 className="text-xl text-white ml-2 mb-2">Find your new Persimmon home</h1>
             <input type="text" onChange={handleInputChange} placeholder="Enter postcode, location or developments..." className="input input-bordered w-full"/>
             
             {locations && locations.length > 0 && (
