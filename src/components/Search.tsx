@@ -29,7 +29,7 @@ export const SearchBar = () => {
                 const data = await response.json();
 
                 if(!data || data.length < 1) {
-                    console.log("no results")
+                    console.log("no results");
                 }
 
                 setLocations(data);
@@ -49,6 +49,10 @@ export const SearchBar = () => {
             
             {locations && locations.length > 0 && (
                 <SearchDropdown locations={locations} />
+            )}
+
+            {!locations && (
+                <p>No results found</p>
             )}
         </div>
     )
