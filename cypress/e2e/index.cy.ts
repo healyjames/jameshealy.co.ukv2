@@ -9,11 +9,11 @@ describe('Persimmon search tests', () => {
         page.get('[data-testid="search-bar"]').should('exist');
     })
 
-    it('no results returned for three or less characters typed', () => {
+    it('no results returned for two or less characters typed', () => {
         cy.intercept('GET', 'https://www.persimmonhomes.com/umbraco/Api/*').as('apiRequest');
 
         const page = cy.visit('http://localhost:4321/persimmon-demo');
-        page.get('[data-testid="search-bar-input"]').type('New');
+        page.get('[data-testid="search-bar-input"]').type('Ne');
 
         cy.wait(500); // Wait for any possible requests to fire
 
