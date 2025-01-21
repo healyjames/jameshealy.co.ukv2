@@ -38,7 +38,7 @@ export const SearchBar = () => {
 
     return (
         <div>
-            <input type="text" onChange={handleInputChange}/>
+            <input type="text" onChange={handleInputChange} className="input input-bordered w-full max-w-xs"/>
             
             {locations && (
                 <SearchDropdown locations={locations} />
