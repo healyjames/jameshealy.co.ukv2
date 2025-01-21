@@ -5,7 +5,12 @@ export const SearchBar = () => {
     const [inputVal, setInputVal] = useState<string>('')
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setInputVal(event.target.value);
+        const value = event.target.value;
+        setInputVal(value);
+
+        if (value.length >= 3) {
+            // fetch from api if at least 3 characters have been implemented
+        }
     }
 
     useEffect(() => {
