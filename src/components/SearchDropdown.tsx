@@ -11,9 +11,9 @@ const handleOnClick = ( location: Location ) => {
 
 export const SearchDropdown = ({ locations }: SearchDropdownProps) => {
     return (
-        <div>
+        <div className="px-2 pt-4 pb-2 border-b border-l border-r border-slate-700 -mt-2 rounded-b-xl">
             {locations.map((location, index) => (
-                <div role="button" tab-index="0" key={index} onClick={() => handleOnClick(location)}>
+                <div role="button" tab-index="0" key={index} onClick={() => handleOnClick(location)} className="px-2 py-1 my-1 hover:bg-slate-600 rounded-md">
                     {location.Name}
                 </div>
             ))}
