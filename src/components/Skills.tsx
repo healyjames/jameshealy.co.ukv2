@@ -6,14 +6,19 @@ export const Skills = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   const skills = [
-    'React',
+    'Node',
     'NextJS',
     'Astro',
+    'TypeScript',
     'Java',
     'Python',
+    'NX',
+    'Azure',
     'Kubernetes',
     'Docker',
-    'Node',
+    'Claude Code',
+    'React',
+    'Storybook',
     'Git',
     'GitHub CI/CD',
     'GraphQL',
@@ -21,9 +26,13 @@ export const Skills = () => {
     'Sass',
     'Tailwind',
     'SQL',
+    'Headless CMS',
+    'Playwright',
+    'Swagger',
+    'OpenAPI',
     'Jira/Agile',
+    'Confluence',
     'HTML/CSS',
-    'TypeScript',
     'Photoshop',
     'Illustrator',
   ];
@@ -48,8 +57,8 @@ export const Skills = () => {
 
   return (
     <React.Fragment>
-      <div className="lg:flex lg:flex-row lg:flex-nowrap lg:justify-between lg:items-center">
-        <h1 className="font-normal m-0 xl:text-6xl">
+      <div className="lg:flex lg:flex-row lg:flex-nowrap lg:justify-between lg:items-baseline">
+        <h1 className="font-normal m-0 mb-0 xl:text-6xl">
           I have experience in{' '}
           <span className="font-bold bg-gradient-to-r from-[#FBDA61] to-[#FF5ACD] text-transparent bg-clip-text">
             <strong>{skills[count]}</strong>
