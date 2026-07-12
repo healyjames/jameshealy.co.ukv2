@@ -1,13 +1,13 @@
 ---
 interface Props {
-    id?: string
+  id?: string;
 }
 
-const { id } = Astro.props
+const { id } = Astro.props;
 ---
 
 <div id={id} class="m-5 p-5 lg:my-20 lg:py-5">
-    <div class="prose-lg">
-        <slot />
-    </div>
+  <div class="prose-lg">
+    <slot />
+  </div>
 </div>

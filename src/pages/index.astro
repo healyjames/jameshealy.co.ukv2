@@ -1,217 +1,264 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro'
-import DesktopNavigation from '../components/navigation/DesktopNavigation.astro'
-import MobileNavigation from '../components/navigation/MobileNavigation.astro'
-import Header from '../components/Header.astro'
-import Content from '../components/Content.astro'
-import Timeline from '../components/timeline/Timeline.astro'
-import TimelineItem from '../components/timeline/TimelineItem.astro'
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import DesktopNavigation from '../components/navigation/DesktopNavigation.astro';
+import MobileNavigation from '../components/navigation/MobileNavigation.astro';
+import Header from '../components/Header.astro';
+import Content from '../components/Content.astro';
+import Timeline from '../components/timeline/Timeline.astro';
+import TimelineItem from '../components/timeline/TimelineItem.astro';
 
-import { ContentSquareContainer } from '../components/content-square/ContentSquareContainer'
-import { ContentSquareItem } from '../components/content-square/ContentSquareItem'
-import { Skills } from '../components/Skills'
+import { ContentSquareContainer } from '../components/content-square/ContentSquareContainer';
+import { ContentSquareItem } from '../components/content-square/ContentSquareItem';
+import { Skills } from '../components/Skills';
 
-import OutlinerImage from '../components/images/outliner.jpg'
-import QuickcarsearchImage from '../components/images/quickcarsearch.jpg'
-import ThgStatusImage from '../components/images/thg-status.jpg'
-import JameshealyImage from '../components/images/james-healy-logo-gradient.jpg'
+import OutlinerImage from '../components/images/outliner.jpg';
+import QuickcarsearchImage from '../components/images/quickcarsearch.jpg';
+import ThgStatusImage from '../components/images/thg-status.jpg';
+import JameshealyImage from '../components/images/james-healy-logo-gradient.jpg';
 
-import { GlobeAltIcon } from '@heroicons/react/24/outline'
-import { TrophyIcon } from '@heroicons/react/24/outline'
-import { ArrowPathRoundedSquareIcon } from '@heroicons/react/24/solid'
-import { CircleStackIcon } from '@heroicons/react/24/outline'
-import { ArrowTrendingUpIcon } from '@heroicons/react/24/solid'
-import { LightBulbIcon } from '@heroicons/react/24/outline'
-
+import { GlobeAltIcon } from '@heroicons/react/24/outline';
+import { TrophyIcon } from '@heroicons/react/24/outline';
+import { ArrowPathRoundedSquareIcon } from '@heroicons/react/24/solid';
+import { CircleStackIcon } from '@heroicons/react/24/outline';
+import { ArrowTrendingUpIcon } from '@heroicons/react/24/solid';
+import { LightBulbIcon } from '@heroicons/react/24/outline';
 ---
 
 <Layout title="Hey, I'm James!">
+  <!-- Navigation -->
+  <div class="block lg:hidden">
+    <MobileNavigation />
+  </div>
+  <div class="hidden lg:block">
+    <DesktopNavigation />
+  </div>
 
-	<!-- Navigation -->
-	<div class="block lg:hidden">
-		<MobileNavigation />
-	</div>
-	<div class="hidden lg:block">
-		<DesktopNavigation />
-	</div>
+  <!-- Content -->
+  <main class="prose max-w-screen-lg my-10 mx-auto">
+    <!-- Header / Intro Text -->
+    <Header
+      title="Full Stack Engineer"
+      subtitle="Hey, I'm James. Full stack developer currently working on e-commerce solutions in the retail industry. Read on to find out more about me!"
+    />
 
-	<!-- Content -->
-	<main class='prose max-w-screen-lg my-10 mx-auto'>
+    <div class="divider"></div>
 
-		<!-- Header / Intro Text -->
-		<Header
-			title="Full Stack Engineer"
-			subtitle="Hey, I'm James. Full stack developer currently working on e-commerce solutions in the retail industry. Read on to find out more about me!"
-		/>
+    <!-- About Me -->
+    <Content id="about-me">
+      <h2>About Me</h2>
+      <p>
+        The past three years have seen me grow massively as a software engineer. I challenged myself to transition from a front-end
+        developer to a full stack engineer, gaining great knowledge and experience in technologies from React and NextJS all the way down to
+        GitHub CI/CD and Kubernetes.
+      </p>
+      <p>
+        My aim is, and has always been, to become a the best engineer and team member that I possibly can who constantly demonstrates core
+        values throughout their work. Those values being: ambition, innovation, collaboration and leadership. I pride myself on my
+        approachable and friendly personality, and constantly look to push myself both in my work and personal life.
+      </p>
+    </Content>
 
-		<div class="divider"></div>
+    <div class="divider"></div>
 
-		<!-- About Me -->
-		<Content id="about-me">
-			<h2>About Me</h2>
-			<p>The past three years have seen me grow massively as a software engineer. I challenged myself to transition from a front-end developer to a full stack engineer, gaining great knowledge and experience in technologies from React and NextJS all the way down to GitHub CI/CD and Kubernetes.</p>
-			<p>My aim is, and has always been, to become a the best engineer and team member that I possibly can who constantly demonstrates core values throughout their work. Those values being: ambition, innovation, collaboration and leadership. I pride myself on my approachable and friendly personality, and constantly look to push myself both in my work and personal life.</p>
-		</Content>
+    <!-- Skills list -->
+    <Content>
+      <Skills client:load />
+    </Content>
 
-		<div class="divider"></div>
+    <div class="divider"></div>
 
-		<!-- Skills list -->
-		<Content>
-			<Skills client:load />
-		</Content>
+    <!-- Achievements  -->
+    <Content id="achievements">
+      <h2>Achievements</h2>
+      <ContentSquareContainer client:load>
+        <ContentSquareItem
+          icon={GlobeAltIcon}
+          title="Homebase"
+          content="I played a crucial role in the development and migration of <a class='text-[#F4D03F]' href='https://www.homebase.co.uk'>homebase.co.uk</a> to THG's latest e-commerce solution where I was able to refine my skills with NextJS and GraphQL."
+          extended={{ vertical: true }}
+          className="lg:col-span-1 lg:row-span-2 bg-gradient-to-tl from-[#F4D03F] to-[#16A085] text-white lg:self-center"
+        />
+        <ContentSquareItem
+          icon={TrophyIcon}
+          title="Awards"
+          content="Winner of Apprentice Of The Year for South Cheshire and runner up for Future Leader"
+          className="bg-primary text-primary-content lg:self-end"
+        />
+        <ContentSquareItem
+          icon={ArrowPathRoundedSquareIcon}
+          title="CI/CD & K8s"
+          content="Setting up GitHub ARC runners, K8s deployment/rollback pipelines, and migrating legacy apps to Kubernetes"
+          className="bg-secondary text-secondary-content lg:self-end"
+        />
+        <ContentSquareItem
+          icon={CircleStackIcon}
+          title="Full Stack"
+          content="Spent time proffessionaly working on front-end, back-end and devops technologies."
+          className="bg-accent text-accent-content lg:self-end"
+        />
+        <ContentSquareItem
+          icon={LightBulbIcon}
+          title="Outliner"
+          content="Chrome extension to provide visual information for widgets on a given THG site."
+          className="border-8 border-base-content text-base-content lg:self-start"
+        />
+        <ContentSquareItem
+          icon={ArrowTrendingUpIcon}
+          title="THG Status"
+          content="Personal development project: Internal healtcheck tool built to track http status for a given service and display in user friendly UI."
+          extended={{ horizontal: true }}
+          className="lg:col-span-2 bg-gradient-to-l from-[#FF3CAC] via-[#784BA0] to-[#2B86C5] text-white lg:self-start"
+        />
+      </ContentSquareContainer>
+    </Content>
 
-		<div class="divider"></div>
+    <div class="divider"></div>
 
-		<!-- Achievements  -->
-		<Content id="achievements">
-			<h2>Achievements</h2>
-			<ContentSquareContainer client:load>
-				<ContentSquareItem
-					icon={GlobeAltIcon}
-					title="Homebase"
-					content="I played a crucial role in the development and migration of <a class='text-[#F4D03F]' href='https://www.homebase.co.uk'>homebase.co.uk</a> to THG's latest e-commerce solution where I was able to refine my skills with NextJS and GraphQL."
-					extended={{vertical: true}}
-					className="lg:col-span-1 lg:row-span-2 bg-gradient-to-tl from-[#F4D03F] to-[#16A085] text-white lg:self-center"
-				/>
-				<ContentSquareItem
-					icon={TrophyIcon}
-					title="Awards"
-					content="Winner of Apprentice Of The Year for South Cheshire and runner up for Future Leader"
-					className="bg-primary text-primary-content lg:self-end"
-				/>
-				<ContentSquareItem
-					icon={ArrowPathRoundedSquareIcon}
-					title="CI/CD &amp; K8s"
-					content="Setting up GitHub ARC runners, K8s deployment/rollback pipelines, and migrating legacy apps to Kubernetes"
-					className="bg-secondary text-secondary-content lg:self-end"
-				/>
-				<ContentSquareItem
-					icon={CircleStackIcon}
-					title="Full Stack"
-					content="Spent time proffessionaly working on front-end, back-end and devops technologies."
-					className="bg-accent text-accent-content lg:self-end"
-				/>
-				<ContentSquareItem
-					icon={LightBulbIcon}
-					title="Outliner"
-					content="Chrome extension to provide visual information for widgets on a given THG site."
-					className="border-8 border-base-content text-base-content lg:self-start"
-				/>
-				<ContentSquareItem
-					icon={ArrowTrendingUpIcon}
-					title="THG Status"
-					content="Personal development project: Internal healtcheck tool built to track http status for a given service and display in user friendly UI."
-					extended={{horizontal: true}}
-					className="lg:col-span-2 bg-gradient-to-l from-[#FF3CAC] via-[#784BA0] to-[#2B86C5] text-white lg:self-start"
-				/>
-			</ContentSquareContainer>
-		</Content>
+    <!-- Personal Projects -->
+    <Content id="personal-projects">
+      <h2>Personal Projects</h2>
+      <Card
+        title="Quickcarsearch.io"
+        buttonText="View project on GitHub"
+        href="https://github.com/healyjames/quickcarsearch-next"
+        image={QuickcarsearchImage}
+        imageAltText="Laptop screen showing quickcarsearch.io homepage"
+      >
+        <p>
+          NextJS and Styled Components web application for finding the cheapest car based on your budget. I created with the aim of being
+          extremely performant, user friendly, SEO friendly and accessible - the site achieved <a
+            href="/images/quickcarsearch-lighthouse.jpg">a score of 100 for every lighthouse metric</a
+          >. Dockerised and deployed using AWS Amplify.
+        </p>
+      </Card>
 
-		<div class="divider"></div>
+      <Card
+        title="THG Status"
+        image={ThgStatusImage}
+        imageAltText="Laptop screen showing internal tooling dashboard tracking health of applications"
+        reverse={true}
+      >
+        <p>
+          Internal healthcheck tool using a NextJS 13 &amp; Tailwind UI, ExpressJS API and MSSQL database. A CRON GitHub pipeline ran every
+          3 minutes to fetch http status codes which the API would serve as JSON. The UIs job was purely to display the data and allow users
+          to keep track of endpoints that were important to them. The API did a lot of the heavy lifting e.g. interacting with the database
+          and generating the json data for the UI to consume.
+        </p>
+      </Card>
 
-		<!-- Personal Projects -->
-		<Content id="personal-projects">
-			<h2>Personal Projects</h2>
-			<Card
-				title="Quickcarsearch.io"
-				buttonText="View project on GitHub"
-				href="https://github.com/healyjames/quickcarsearch-next"
-				image={QuickcarsearchImage}
-				imageAltText="Laptop screen showing quickcarsearch.io homepage"
-			>
-				<p>NextJS and Styled Components web application for finding the cheapest car based on your budget. I created with the aim of being extremely performant, user friendly, SEO friendly and accessible - the site achieved <a href="/images/quickcarsearch-lighthouse.jpg">a score of 100 for every lighthouse metric</a>.  Dockerised and deployed using AWS Amplify.</p>
-			</Card>
-			
-			<Card
-				title="THG Status"
-				image={ThgStatusImage}
-				imageAltText="Laptop screen showing internal tooling dashboard tracking health of applications"
-				reverse={true}
-			>
-				<p>Internal healthcheck tool using a NextJS 13 &amp; Tailwind UI, ExpressJS API and MSSQL database. A CRON GitHub pipeline ran every 3 minutes to fetch http status codes which the API would serve as JSON. The UIs job was purely to display the data and allow users to keep track of endpoints that were important to them. The API did a lot of the heavy lifting e.g. interacting with the database and generating the json data for the UI to consume.</p>
-			</Card>
+      <Card
+        title="Outliner"
+        image={OutlinerImage}
+        imageAltText="Google chrome extensions page with dea+tails of Outliner extension on screen"
+        buttonText="View on Chrome Web Store"
+        href="https://chromewebstore.google.com/detail/outliner/nkihollbkhfekaoobfmoigabmbjppfko?hl=en&authuser=0"
+      >
+        <p>
+          Chrome extension that visually highlights the various different widgets on a THG site and displays important information each
+          widget such as the type and ID number.
+        </p>
+      </Card>
 
-			<Card
-				title="Outliner"
-				image={OutlinerImage}
-				imageAltText="Google chrome extensions page with dea+tails of Outliner extension on screen"
-				buttonText="View on Chrome Web Store"
-				href="https://chromewebstore.google.com/detail/outliner/nkihollbkhfekaoobfmoigabmbjppfko?hl=en&authuser=0"
-			>
-				<p>Chrome extension that visually highlights the various different widgets on a THG site and displays important information each widget such as the type and ID number.</p>
-			</Card>
+      <Card
+        title="Jameshealy.co.uk"
+        image={JameshealyImage}
+        imageAltText="jameshealy.co.uk logo"
+        reverse={true}
+        buttonText="View on GitHub"
+        href="https://github.com/healyjames/jameshealy.co.ukv2"
+      >
+        <p>
+          I built jameshealy.co.uk as a project to modernize my old portfolio and experiment with the latest technologies. The site has been
+          built using Astro JS and styled with Tailwind / Daisy UI. I'm excited to see how these tools can be used to create even more
+          impressive projects in the future.
+        </p>
+      </Card>
+    </Content>
 
-			<Card
-				title="Jameshealy.co.uk"
-				image={JameshealyImage}
-				imageAltText="jameshealy.co.uk logo"
-				reverse={true}
-				buttonText="View on GitHub"
-				href="https://github.com/healyjames/jameshealy.co.ukv2"
-			>
-				<p>I built jameshealy.co.uk as a project to modernize my old portfolio and experiment with the latest technologies. The site has been built using Astro JS and styled with Tailwind / Daisy UI. I'm excited to see how these tools can be used to create even more impressive projects in the future.</p>
-			</Card>
-		</Content>
+    <div class="divider"></div>
 
-		<div class="divider"></div>
+    <!-- Work History -->
+    <Timeline>
+      <TimelineItem role="Software Engineer" time="2021 - present" company="THG" location="Manchester, UK">
+        <p>
+          Driven by a passion for learning and growth, I've had the opportunity to contribute to three distinct teams at THG. I moved from
+          more front-end oriented work to more devOps and back-end teams.
+        </p>
+        <p>
+          My first role was to support and develop the on-boarding of clients (such as White Stuff, Heinz and Lyle & Scott) to our
+          e-commerce platform. Building a new site would involve working with Sass, Java, JSPs and Javascript. Work ranged from fairly
+          simple tasks like styling the site to match UX wire-frames to building/customising widgets, SEO improvements and more.
+        </p>
+        <p>
+          From here, I moved on to the site implementation team where I began to work on complex third party software integration such as
+          Power Reviews and Obsess VR until I moved to a squad whose focus was purely on Homebase. A massive project I was part of was
+          migrating the Homebase site to a new e-commerce platform which involved rebuilding major functionality such as click and collect
+          and store locator. This is where I began to start working heavily with React and GraphQL.
+        </p>
+        <p>
+          After showing an interest and building a solid track record working on devOps and back-end technologies, I was brought in to the
+          Site Automation team to help on another big project which was migrating the teams applications away from dedicated virtual
+          machines and on to the new in-house kubernetes solution. Here, I was able to configure new Kubernetes GitHub ARC runners for the
+          team, create GitHub CI/CD workflow deployment and rollback pipelines as well as complete general work on back end Java and Python
+          applications owned by this team.
+        </p>
+      </TimelineItem>
 
-		<!-- Work History -->
-		<Timeline>
-			<TimelineItem
-				role="Software Engineer"
-				time="2021 - present"
-				company="THG"
-				location="Manchester, UK"
-			>
-				<p>Driven by a passion for learning and growth, I've had the opportunity to contribute to three distinct teams at THG. I moved from more front-end oriented work to more devOps and back-end teams.</p>
-				<p>My first role was to support and develop the on-boarding of clients (such as White Stuff, Heinz and Lyle & Scott) to our e-commerce platform. Building a new site would involve working with Sass, Java, JSPs and Javascript. Work ranged from fairly simple tasks like styling the site to match UX wire-frames to building/customising widgets, SEO improvements and more.</p>
-				<p>From here, I moved on to the site implementation team where I began to work on complex third party software integration such as Power Reviews and Obsess VR until I moved to a squad whose focus was purely on Homebase. A massive project I was part of was migrating the Homebase site to a new e-commerce platform which involved rebuilding major functionality such as click and collect and store locator. This is where I began to start working heavily with React and GraphQL.</p>
-				<p>After showing an interest and building a solid track record working on devOps and back-end technologies, I was brought in to the Site Automation team to help on another big project which was migrating the teams applications away from dedicated virtual machines and on to the new in-house kubernetes solution. Here, I was able to configure new Kubernetes GitHub ARC runners for the team, create GitHub CI/CD workflow deployment and rollback pipelines as well as complete general work on back end Java and Python applications owned by this team.</p>
-			</TimelineItem>
+      <TimelineItem
+        role="Digital & Technology Solutions Apprentice"
+        time="2015 - 2021"
+        company="The Travel Visa Company"
+        location="Crewe, UK"
+      >
+        <p>
+          My role here evolved a lot over the years I was working at TVC. I joined working in social media and marketng, then moved to be a
+          graphic designer and later on to be a web developer predomintly working on wordpress sites.
+        </p>
+        <p>
+          A notable project from my time here was building a PDF visa application pack generator with a dashboard style user interface which
+          allowed staff to enter details about visa requirements that would then be generated into a PDF upon request to the webapp.
+        </p>
+        <p>
+          Most of my time here was spent as a graphic designer which I was then able to translate into simple UI components - I redesigned a
+          visa requirement widget interface by looking at popular UI trends within the travel industry and combining them with prominent web
+          design principles (Gestalt) while keeping within the companies brand guidelines. This boosted user engagement and improved our
+          websites overall usability.
+        </p>
+        <p>
+          During my time here, I was proud to have completed my Digital &amp; technology solutions degree and graduate with first class
+          honours.
+        </p>
+      </TimelineItem>
 
-			<TimelineItem
-				role="Digital &amp; Technology Solutions Apprentice"
-				time="2015 - 2021"
-				company="The Travel Visa Company"
-				location="Crewe, UK"
-			>
-				<p>My role here evolved a lot over the years I was working at TVC. I joined working in social media and marketng, then moved to be a graphic designer and later on to be a web developer predomintly working on wordpress sites.</p>
-				<p>A notable project from my time here was building a PDF visa application pack generator with a dashboard style user interface which allowed staff to enter details about visa requirements that would then be generated into a PDF upon request to the webapp.</p>
-				<p>Most of my time here was spent as a graphic designer which I was then able to translate into simple UI components - I redesigned a visa requirement widget interface by looking at popular UI trends within the travel industry and combining them with prominent web design principles (Gestalt) while keeping within the companies brand guidelines. This boosted user engagement and improved our websites overall usability.</p>
-				<p>During my time here, I was proud to have completed my Digital &amp; technology solutions degree and graduate with first class honours.</p>
-			</TimelineItem>
+      <TimelineItem role="Kitchen Assistant" time="2014 - 2015" company="Gees Kitchen" location="Sandbach, UK">
+        <p>Pot washing, general prep work and kitchen hygiene.</p>
+      </TimelineItem>
+    </Timeline>
 
-			<TimelineItem
-				role="Kitchen Assistant"
-				time="2014 - 2015"
-				company="Gees Kitchen"
-				location="Sandbach, UK"
-			>
-				<p>Pot washing, general prep work and kitchen hygiene.</p>
-			</TimelineItem>
-		</Timeline>
+    <div class="divider"></div>
 
-		<div class="divider"></div>
+    <!-- Mentions  -->
+    <Content id="mentions">
+      <div class="flex gap-2 flex-wrap justify-center items-center">
+        <a class="btn" href="https://astro.build/">Astro</a>
+        <a class="btn" href="https://tailwindcss.com/">Tailwind</a>
+        <a class="btn" href="https://react.dev/">React</a>
+        <a class="btn" href="https://daisyui.com/">DaisyUI</a>
+        <a class="btn" href="https://heroicons.com/">HeroIcons</a>
+        <a class="btn" href="https://www.grabient.com/">Grabient</a>
+      </div>
+    </Content>
 
-		<!-- Mentions  -->
-		<Content id="mentions">
-			<div class="flex gap-2 flex-wrap justify-center items-center">
-				<a class="btn" href="https://astro.build/">Astro</a>
-				<a class="btn" href="https://tailwindcss.com/">Tailwind</a>
-				<a class="btn" href="https://react.dev/">React</a>
-				<a class="btn" href="https://daisyui.com/">DaisyUI</a>
-				<a class="btn" href="https://heroicons.com/">HeroIcons</a>
-				<a class="btn" href="https://www.grabient.com/">Grabient</a>
-			</div>
-		</Content>
+    <div class="divider"></div>
 
-		<div class="divider"></div>
-
-		<!-- Get in touch -->
-		 <Content>
-			<p class="text-center">Feel free to add me on <a href="https://www.linkedin.com/in/healyjames97/" class="badge bg-[#0a66c2] text-white underline-offset-8">LinkedIn</a> and we can chat!</p>
-		 </Content>
-
-	</main>
+    <!-- Get in touch -->
+    <Content>
+      <p class="text-center">
+        Feel free to add me on <a href="https://www.linkedin.com/in/healyjames97/" class="badge bg-[#0a66c2] text-white underline-offset-8"
+          >LinkedIn</a
+        > and we can chat!
+      </p>
+    </Content>
+  </main>
 </Layout>
