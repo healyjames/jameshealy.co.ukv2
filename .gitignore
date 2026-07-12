@@ -8,6 +8,10 @@ dist/
 # dependencies
 node_modules/
 
+# platform-specific npm lockfile (regenerated per-platform to avoid
+# npm optional-dependency native binding bug: npm/cli#4828)
+package-lock.json
+
 # logs
 npm-debug.log*
 yarn-debug.log*
