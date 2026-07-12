@@ -17,6 +17,8 @@ import OutlinerImage from '../components/images/outliner.jpg';
 import QuickcarsearchImage from '../components/images/quickcarsearch.jpg';
 import ThgStatusImage from '../components/images/thg-status.jpg';
 import JameshealyImage from '../components/images/james-healy-logo-gradient.jpg';
+import RedcowV2Image from '../components/images/redcowv2.png';
+import MaximumBookingsImage from '../components/images/maximum-bookings.png';
 
 import { GlobeAltIcon } from '@heroicons/react/24/outline';
 import { TrophyIcon } from '@heroicons/react/24/outline';
@@ -105,6 +107,38 @@ import { LightBulbIcon } from '@heroicons/react/24/outline';
     <!-- Personal Projects -->
     <Content id="personal-projects">
       <h2>Personal Projects</h2>
+      <Card
+        title="Maximum Bookings"
+        buttonText="Preview"
+        href="https://redcownantwich.co.uk/reservations/"
+        image={MaximumBookingsImage}
+        imageAltText="Screenshot of redcownantwich.co.uk homepage"
+      >
+        <p>
+          Multi-tenant restaurant reservation system built on Cloudflare Workers. A single deployment serves a Preact frontend and Hono REST
+          API, backed by Cloudflare D1 (edge SQLite) database. The project was built end-to-end with Claude via a custom Squad agent
+          framework - a team of named AI specialists with defined roles, living inside the repo with shared docs as persistent memory.
+          Business rules, capacity logic, and data models live as markdown files that serve as the single source of truth for both the
+          implementation and the AI team's persistent memory across sessions.
+        </p>
+      </Card>
+
+      <Card
+        title="RedcowV2"
+        buttonText="Visit the site"
+        href="http://redcownantwich.co.uk/"
+        image={RedcowV2Image}
+        imageAltText="Screenshot of redcownantwich.co.uk homepage"
+        reverse={true}
+      >
+        <p>
+          Content focused custom whitelabel platform tailored towards small local pubs, restaurants and cafes aiming to provide an
+          incredibly performant site to rank highly in search engines. Built using AstroJS and plain vanilla CSS with a focus on
+          accessibility and SEO. No CMS, branded data is simply stored in a structured .ts file and compiled during build time for pure
+          simplicity and ease.
+        </p>
+      </Card>
+
       <Card
         title="Quickcarsearch.io"
         buttonText="View project on GitHub"
