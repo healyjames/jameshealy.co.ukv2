@@ -1,33 +1,36 @@
 ---
-import { Image as AstroImage } from 'astro:assets'
+import { Image as AstroImage } from 'astro:assets';
 
 interface Props {
-	title: string
-	buttonText?: string
-	href?: string
-	image: ImageMetadata
-	imageAltText: string
-	reverse?: boolean
+  title: string;
+  buttonText?: string;
+  href?: string;
+  image: ImageMetadata;
+  imageAltText: string;
+  reverse?: boolean;
 }
 
 const { href, title, buttonText, image, imageAltText, reverse } = Astro.props;
 ---
 
 <div class={`${reverse ? 'lg:!flex-row-reverse' : ''} rounded-2xl grid lg:grid-cols-2 glass my-16`}>
-	<figure class={`${reverse ? 'lg:order-last lg:!rounded-r-[inherit] lg:!rounded-l-[0]' : 'lg:!rounded-r-[0] lg:!rounded-l-[inherit]'} m-0`}>
-		<AstroImage
-			class="rounded-[inherit]"
-			src={image}
-			alt={imageAltText} />
-	</figure>
-	<div class="card-body">
-		<h2 class="card-title">{title}</h2>
-		<slot />
+  <figure
+    class={`${reverse ? 'lg:order-last lg:!rounded-r-[inherit] lg:!rounded-l-[0]' : 'lg:!rounded-r-[0] lg:!rounded-l-[inherit]'} mt-0 mb-0`}
+  >
+    <AstroImage class="rounded-[inherit]" src={image} alt={imageAltText} />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">{title}</h2>
+    <slot />
 
-		{buttonText && (
-			<div class="card-actions justify-end">
-				<a href={href} class="btn btn-primary font-normal">{ buttonText }</a>
-			</div>
-		)}
-	</div>
+    {
+      buttonText && (
+        <div class="card-actions justify-end">
+          <a href={href} class="btn btn-primary font-normal">
+            {buttonText}
+          </a>
+        </div>
+      )
+    }
+  </div>
 </div>

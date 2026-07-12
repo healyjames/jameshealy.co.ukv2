@@ -1,20 +1,17 @@
 ---
-
-
 interface Props {
-	title: string
-	subtitle: string
+  title: string;
 }
 
-const { title, subtitle } = Astro.props
+const { title } = Astro.props;
 ---
 
 <header>
-
-        <div class="h-[75vh] mx-10 grid grid-rows-2 lg:grid-rows-none lg:grid-cols-2 grid-flow-col lg:gap-16 items-center justify-center flex-nowrap">
-            <h1 class="font-bold text-7xl xl:text-8xl m-1 xl:leading-tight leading-tight font-bold bg-gradient-to-r from-[#FA8BFF] via-[#2BD2FF] to-[#2BFF88] text-transparent bg-clip-text self-end lg:self-auto">{title}</h1>
-            <h2 class="font-normal xl:text-2xl self-start lg:self-auto">{subtitle}</h2>
-        </div>
-
-        
+  <div class="mx-10 md:flex md:justify-center md:items-center md:h-[90vh]">
+    <h1
+      class="font-semibold md:max-w-[700px] md:text-center text-7xl md:text-8xl m-1 xl:leading-tight leading-tight bg-gradient-to-r from-[#FA8BFF] via-[#2BD2FF] to-[#2BFF88] text-transparent bg-clip-text"
+    >
+      {title}
+    </h1>
+  </div>
 </header>

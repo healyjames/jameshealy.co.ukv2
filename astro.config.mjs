@@ -1,15 +1,17 @@
 import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
-import react from "@astrojs/react";
-
-import netlify from '@astrojs/netlify/functions';
+import tailwindcss from '@tailwindcss/vite';
+import react from '@astrojs/react';
+import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react()],
-  devToolbar: {
-    enabled: false
+  integrations: [react()],
+  vite: {
+    plugins: [tailwindcss()],
   },
-  output: "server",
-  adapter: netlify()
+  devToolbar: {
+    enabled: false,
+  },
+  output: 'server',
+  adapter: netlify(),
 });

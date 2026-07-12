@@ -1,0 +1,22 @@
+---
+import PortraitImage from '../components/images/me.jpg';
+import { Image as AstroImage } from 'astro:assets';
+import Quote from './Quote.astro';
+
+interface Props {
+  subtitle: string;
+}
+
+const { subtitle } = Astro.props;
+---
+
+<div class="divider"></div>
+<div class="py-8 md:py-20">
+  <div class="md:flex md:justify-center md:items-center">
+    <AstroImage src={PortraitImage} alt="James Healy Portrait Image" class="w-1/2 md:w-1/3 mx-auto rounded-full shadow-lg" />
+    <div>
+      <h2 class="text-center md:text-left md:mx-10">James Healy</h2>
+      <Quote quote={subtitle} />
+    </div>
+  </div>
+</div>
